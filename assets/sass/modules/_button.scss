@@ -1,0 +1,60 @@
+// ---------------------------------------------------------===
+// Button styles
+// ---------------------------------------------------------===
+
+.btn {
+  position: relative;
+  background: $black;
+  text-transform: uppercase;
+  padding: 17px 30px;
+  color: color(white);
+  border-radius: 2px;
+  font-weight: 500;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  overflow: hidden;
+  border: none;
+  display: inline-block;
+  transition: 0.3s ease;
+  clip-path: polygon(
+    0 0,
+    calc(100% - 11px) 0,
+    100% 11px,
+    100% 100%,
+    11px 100%,
+    0 calc(100% - 11px)
+  );
+
+  &:hover {
+    clip-path: polygon(0 0, 100% 0, 100% 11px, 100% 100%, 11px 100%, 0 100%);
+  }
+}
+
+.link {
+  display: inline-flex;
+  font-weight: 500;
+  gap: 5px;
+  overflow: hidden;
+  @include fs(12px, 1.2, 0.05em, uppercase);
+
+  &:after {
+    content: "\e901";
+    font: 10px/1 icomoon;
+    transform: translateY(2px);
+    @include animate(transform);
+  }
+
+  &:hover {
+    &:after {
+      transform: translateY(15px);
+    }
+  }
+
+  &.sm {
+    font-size: 10px;
+
+    &:after {
+      font-size: 9px;
+    }
+  }
+}

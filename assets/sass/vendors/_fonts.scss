@@ -1,0 +1,20 @@
+// ---------------------------------------------------------===
+// Fontface
+// ---------------------------------------------------------===
+
+// icomoon
+@include font-face("icomoon", "icomoon", ("#{$font-path}/icomoon/icomoon"), 400, normal, qf5bos );
+
+// @include font-face('Avenir LT Pro', 'AvenirLTPro', '#{$font-path}/AvenirLTPro/Oblique/font', 400, italic);
+@include font-face('GTF Good Sans TRIAL Thin', 'GTFGoodSans', '#{$font-path}/GTFGoodSans/GTFGoodSansTRIAL-Thin', 100);
+@include font-face('GTF Good Sans TRIAL Thin Italic', 'GTFGoodSans', '#{$font-path}/GTFGoodSans/GTFGoodSansTRIAL-ThinItalic', 100, italic);
+@include font-face('GTF Good Sans TRIAL Light', 'GTFGoodSans', '#{$font-path}/GTFGoodSans/GTFGoodSansTRIAL-Light', 300);
+@include font-face('GTF Good Sans TRIAL Light Italic', 'GTFGoodSans', '#{$font-path}/GTFGoodSans/GTFGoodSansTRIAL-LightItalic', 300, italic);
+@include font-face('GTF Good Sans TRIAL Regular', 'GTFGoodSans', '#{$font-path}/GTFGoodSans/GTFGoodSansTRIAL-Regular', 400);
+@include font-face('GTF Good Sans TRIAL Regular Italic', 'GTFGoodSans', '#{$font-path}/GTFGoodSans/GTFGoodSansTRIAL-RegularItalic', 400, italic);
+@include font-face('GTF Good Sans TRIAL Medium', 'GTFGoodSans', '#{$font-path}/GTFGoodSans/GTFGoodSansTRIAL-Medium', 500);
+@include font-face('GTF Good Sans TRIAL Medium Italic', 'GTFGoodSans', '#{$font-path}/GTFGoodSans/GTFGoodSansTRIAL-MediumItalic', 500, italic);
+@include font-face('GTF Good Sans TRIAL Bold', 'GTFGoodSans', '#{$font-path}/GTFGoodSans/GTFGoodSansTRIAL-Bold', 700);
+@include font-face('GTF Good Sans TRIAL Bold Italic', 'GTFGoodSans', '#{$font-path}/GTFGoodSans/GTFGoodSansTRIAL-BoldItalic', 700, italic);
+@include font-face('GTF Good Sans TRIAL Black', 'GTFGoodSans', '#{$font-path}/GTFGoodSans/GTFGoodSansTRIAL-Black', 900);
+@include font-face('GTF Good Sans TRIAL Black Italic', 'GTFGoodSans', '#{$font-path}/GTFGoodSans/GTFGoodSansTRIAL-BlackItalic', 900, italic);

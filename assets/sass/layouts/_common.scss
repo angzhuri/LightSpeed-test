@@ -1,0 +1,266 @@
+// ---------------------------------------------------------===
+// Common styles
+// ---------------------------------------------------------===
+
+.container {
+  padding-left: 40px;
+  padding-right: 40px;
+  width: 100%;
+
+  @include media("<desktop") {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+#main {
+  padding-top: 70px;
+}
+
+.section-heading {
+  padding: 167px 0 73px;
+
+  @include media("<tablet") {
+    padding: 131px 0 37px;
+  }
+
+  .text-primary-link--med {
+    margin-bottom: 23px;
+  }
+
+  h1 {
+    br {
+      @include media("<tablet") {
+        display: none;
+      }
+    }
+  }
+}
+
+#bg-main,
+.bg-grad {
+  position: absolute;
+  top: 522px;
+  left: 0;
+  right: 0;
+  height: 1535px;
+  z-index: -1;
+  background: linear-gradient(
+    180deg,
+    rgba($glow, 0) 0%,
+    rgba($glow, 0.9) 19.79%,
+    rgba($glow, 0.9) 67.71%,
+    rgba($glow, 0) 100%
+  );
+
+  @include media("<tablet") {
+    top: 290px;
+  }
+
+  &.lg {
+    height: 2634px;
+  }
+
+  &.bg-sky {
+    background: linear-gradient(
+      180deg,
+      rgba(182, 229, 255, 0) 0%,
+      $sky 51.56%,
+      rgba(182, 229, 255, 0) 100%
+    );
+  }
+
+  &.bg-dawn {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 105, 57, 0) 0%,
+      $dawn 51.56%,
+      rgba(255, 106, 58, 0) 100%
+    );
+  }
+
+  &.bg-office {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 215, 207, 0) 0%,
+      #ffd7cf 51.56%,
+      rgba(255, 215, 207, 0) 100%
+    );
+  }
+
+  &.bg-red {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 215, 207, 0) 0%,
+      #ffd7cf 51.56%,
+      rgba(255, 215, 207, 0) 100%
+    );
+  }
+
+  &.bg-yellow {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 209, 91, 0) 0%,
+      #ffd15b 58.85%,
+      rgba(255, 209, 91, 0) 100%
+    );
+  }
+
+  &.bg-yellow-2 {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 246, 150, 0) 0%,
+      #fff696 51.56%,
+      rgba(255, 246, 150, 0) 100%
+    );
+  }
+
+  &.bg-green {
+    background: linear-gradient(
+      180deg,
+      rgba(211, 255, 166, 0) 0%,
+      #d3ffa6 51.04%,
+      rgba(211, 255, 166, 0) 100%
+    );
+  }
+}
+
+.bg-texts {
+  font-size: 320px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  position: absolute;
+  top: 92px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-transform: uppercase;
+  opacity: 0.1;
+  filter: blur(10px);
+  white-space: nowrap;
+  pointer-events: none;
+
+  @include media("<tablet") {
+    font-size: 180px;
+    line-height: 205.2px;
+  }
+
+  span {
+    display: block;
+
+    &:first-child {
+      transform: translateX(25vw);
+    }
+
+    &:last-child {
+      transform: translateX(-15vw);
+    }
+  }
+}
+
+.has-border-t {
+  border-top: 1px solid rgba($black, 0.2);
+  padding: 22px 0;
+}
+
+.img-ratio {
+  aspect-ratio: 1;
+  position: relative;
+  overflow: hidden;
+  display: block;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.object-cover {
+  height: 100%;
+  width: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hidden-xs {
+  @include media("<tablet") {
+    display: none !important;
+  }
+}
+
+.hidden-sm {
+  @include media("<desktop") {
+    display: none !important;
+  }
+}
+
+.visible-xs {
+  @include media(">=tablet") {
+    display: none !important;
+  }
+}
+
+.visible-sm {
+  @include media(">=desktop") {
+    display: none !important;
+  }
+}
+
+.cursor {
+  $size: 4px;
+
+  display: flex;
+  position: fixed;
+  top: -25px;
+  left: -25px;
+  mix-blend-mode: difference;
+  background-color: $white;
+  border-radius: 50%;
+  width: $size;
+  height: $size;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+  z-index: 1000000;
+  pointer-events: none;
+
+  &::before,
+  &::after {
+    position: absolute;
+    transition: all .25s;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &::before {
+    $size: 40px;
+
+    content: '';
+    border: 1px solid $white;
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+  }
+
+  &_active {
+    &::before {
+      $size: 60px;
+
+      width: $size;
+      height: $size;
+    }
+  }
+}
+
+.is-cursor {
+  * {
+    &,
+    &::before,
+    &::after {
+      cursor: none !important;
+    }
+  }
+}
+

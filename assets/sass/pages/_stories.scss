@@ -1,0 +1,146 @@
+// ---------------------------------------------------------===
+// Stories styles
+// ---------------------------------------------------------===
+
+.stories-slider-section {
+	margin-bottom: 80px;
+	position: relative;
+
+  .bg-grad {
+    top: -400px;
+    bottom: -400px;
+    height: auto;
+  }
+
+	.head {
+		display: flex;
+		justify-content: space-between;
+		border-top: 1px solid 	rgba(color(black), 0.3);
+		padding: 20px 0 26px;
+
+		@include media('<tablet') {
+			padding-bottom: 30px;
+		}
+	}
+
+	.swiper-pagination {
+		position: static;
+		width: auto;
+		font-weight: 200;
+		font-size: 40px;
+		line-height: 1;
+		letter-spacing: -0.02em;
+		padding-top: 5px;
+
+		@include media('<tablet') {
+			font-size: 22px;
+			letter-spacing: -0.05em;
+			padding-top: 0;
+		}
+	}
+
+	.btn-hold {
+		text-align: center;
+		margin-top: -36px;
+
+		@include media('<widescreen') {
+			margin-top: 30px;
+		}
+
+		@include media('<tablet') {
+			margin-top: 10px;
+		}
+	}
+}
+
+.swiper-stories {
+
+  &.swiper {
+    padding: 0;
+    overflow: visible;
+
+    @include media('<tablet') {
+      padding: 12px 0;
+    }
+
+    .swiper-wrapper {
+      @include media('<tablet') {
+        margin: 0 -20px;
+      }
+    }
+
+    .swiper-slide {
+      box-sizing: border-box;
+
+      @include media('<tablet') {
+        padding: 0 20px;
+      }
+    }
+  }
+
+  .desc {
+    padding: 20px 90px 0;
+
+    @include media('<desktop') {
+      padding: 20px 30px 0;
+    }
+
+    @include media('<tablet') {
+      padding: 38px 0 0;
+    }
+
+    p.text-title--thin {
+      margin-bottom: 26px;
+
+      @include media('<tablet') {
+        font-size: 16px;
+        line-height: 1.4;
+        margin-bottom: 20px;
+      }
+    }
+
+    p.text-body-lg {
+      background: -webkit-linear-gradient(#9c977d, #fff7cd);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      @include media('<tablet') {
+        display: none;
+      }
+    }
+
+    h2 {
+      margin-bottom: 81px;
+
+      @include media('<tablet') {
+        font-size: 22px;
+        letter-spacing: -0.03em;
+        margin-bottom: 30px;
+      }
+    }
+
+    h2:not(.text-headline--thin) {
+        text-transform: uppercase;
+        font-weight: 400;
+    }
+
+    .btn-hold {
+      text-align: left;
+      margin: 0;
+    }
+  }
+}
+
+.stories-section {
+  .card {
+    margin-bottom: 70px;
+
+    @include media('<desktop') {
+      margin-bottom: 50px;
+    }
+
+    @include media('<tablet') {
+      margin-bottom: 30px;
+    }
+  }
+}

@@ -1,0 +1,56 @@
+// ---------------------------------------------------------===
+// Aboutus styles
+// ---------------------------------------------------------===
+
+.section-aboutus {
+  position: relative;
+  padding: 209px 0;
+  margin-bottom: 108px;
+
+  @include media('<tablet') {
+    padding: 315px 0 100px;
+    margin-bottom: 0;
+  }
+
+  .title {
+    @include fs(30px, 1.4, -0.05em, uppercase);
+    max-width: 820px;
+    margin-bottom: 60px;
+
+    @include media('<desktop') {
+      @include fs(20px, 1.2, -0.03em);
+    }
+    
+    @include media('<tablet') {
+      padding-right: 45px;
+      margin-bottom: 80px;
+    }
+  }
+
+  .logo-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0 57px;
+    @extend %listreset;
+
+    @include media('<tablet') {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    > li {
+      height: 79px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  h3.text-primary-link--med {
+    padding-top: 22px;
+
+    @include media('<tablet') {
+      border-top: 1px solid rgba($black, .2);
+      margin-bottom: 30px;
+    }
+  }
+}

@@ -1,0 +1,95 @@
+// ---------------------------------------------------------===
+// Intro styles
+// ---------------------------------------------------------===
+
+.intro {
+  .heading {
+    @include media("<tablet") {
+      padding-bottom: 7px;
+    }
+
+    .text-primary-link--med {
+      @include media("<tablet") {
+        margin-bottom: 50px;
+      }
+    }
+
+    .text-title--thin {
+      padding-right: 40px;
+
+      @include media("<desktop") {
+        @include fs(20px, 1.2, -0.03em);
+      }
+    }
+
+    p {
+      margin-bottom: 30px;
+
+      @include media("<tablet") {
+        margin-bottom: 24px;
+      }
+    }
+  }
+
+  .col-sm-8 .img-ratio {
+    @include media(">=tablet") {
+      aspect-ratio: 2.05;
+    }
+  }
+
+  .img-ratio {
+    @include media("<tablet") {
+      aspect-ratio: 0;
+    }
+  }
+
+  .img-row {
+    @include media("<tablet") {
+      margin: 0 -5px;
+
+      > * {
+        padding: 0 5px;
+      }
+
+      .col-sm-4 {
+        width: 37.6%;
+      }
+
+      .col-sm-8 {
+        width: 62.4%;
+      }
+    }
+  }
+
+  .hide-mobile {
+    @include media("<tablet") {
+      display: none;
+    }
+  }
+
+  &.style--01 {
+    .heading {
+      padding-bottom: 46px;
+
+      @include media("<tablet") {
+        border-top: none;
+        padding-top: 11px;
+        padding-bottom: 32px;
+      }
+
+      p {
+        margin-bottom: 30px;
+
+        @include media("<tablet") {
+          margin-bottom: 24px;
+        }
+      }
+
+      .text-title--thin {
+        @include media("<tablet") {
+          padding-right: 23px;
+        }
+      }
+    }
+  }
+}

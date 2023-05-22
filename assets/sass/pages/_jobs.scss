@@ -1,0 +1,168 @@
+// ---------------------------------------------------------===
+// Job styles
+// ---------------------------------------------------------===
+
+.section-jobs {
+  padding-bottom: 45px;
+
+  .btn-wrap {
+    padding-top: 65px;
+  }
+}
+
+.job-list {
+  @extend %listreset;
+
+  > li {
+    border: 1px solid rgba($black, 0.2);
+    border-width: 1px 0;
+    margin-bottom: -1px;
+  }
+}
+
+.jobcard {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 18px 0 38px;
+
+  @include media('<tablet') {
+    padding: 26px 0 18px;
+  }
+
+  &:hover .image-hold:after {
+    opacity: 0;
+  }
+
+  .info {
+    flex: 1;
+    padding: 0 10%;
+
+    @include media('<widescreen') {
+      padding: 0 4%;
+    }
+
+    @include media('<tablet') {
+      padding: 0;
+    }
+
+    .heading {
+      min-height: 171px;
+
+      @include media('<desktop') {
+        min-height: 110px;
+      }
+    }
+
+    .post-info {
+      display: block;
+      text-transform: uppercase;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      margin-bottom: 9px;
+
+      @include media('<desktop') {
+        margin-bottom: 4px;
+      }
+
+      @include media('<tablet') {
+        font-size: 12px;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .icon-arrow-external04 {
+    font-size: 188px;
+    width: 201px;
+
+    @include media('<widescreen') {
+      font-size: 100px;
+      width: 120px;
+    }
+
+    @include media('<desktop') {
+      width: 50px;
+      font-size: 45px;
+    }
+
+    @include media('<tablet') {
+      display: none;
+    }
+  }
+
+  .image-hold {
+    width: 325px;
+    height: 192px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 246, 152, 1) 81%);
+    position: relative;
+    background: #FFF696;
+
+    @include media('<tablet') {
+      width: 100%;
+      margin-bottom: 26px;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      @include animate(opacity);
+      background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    }
+
+    &.green {
+      background: #D3FFA6;
+    }
+
+    &.pink {
+      background: #FFD7CF;
+    }
+
+    &.dark-gray {
+      background: #8E9E7C;
+    }
+
+    &.blue {
+      background: #B6E5FF;
+    }
+
+    &.yellow {
+      background: #FFF696;
+    }
+
+    img {
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  .tags {
+    @extend %listreset;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -5px;
+
+    li {
+      margin: 0 5px 10px;
+    }
+  }
+}
+
+.choose-option {
+  display: flex;
+  justify-content: flex-end;
+  padding: 26px 0;
+  gap: 19px;
+
+  .nice-form {
+    display: flex;
+    gap: 6px;
+  }
+}

@@ -1,0 +1,42 @@
+// ---------------------------------------------------------===
+// Nav inline styles
+// ---------------------------------------------------------===
+
+.nav-inline {
+  margin-bottom: 62px;
+  overflow-x: auto;
+
+  @include media('<desktop') {
+    margin-bottom: 44px;
+  }
+
+  ul {
+    @extend %listreset;
+    white-space: nowrap;
+
+    li {
+      display: inline-block;
+      vertical-align: top;
+      margin-right: 25px;
+    }
+  }
+
+  a {
+    color: inherit;
+    display: flex;
+    gap: 6px;
+    @include animate(opacity);
+
+    &:not(.active) {
+      opacity: .4;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+
+    span {
+      font-size: 8px;
+    }
+  }
+}

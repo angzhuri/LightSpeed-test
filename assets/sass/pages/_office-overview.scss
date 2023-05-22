@@ -1,0 +1,251 @@
+// ---------------------------------------------------------===
+// Office overview styles
+// ---------------------------------------------------------===
+
+.banner-office {
+  padding: 0;
+  margin-bottom: 82px;
+  text-align: left;
+
+  @include media("<tablet") {
+    margin-bottom: 0;
+  }
+
+  .container {
+    padding-top: 168px;
+    padding-bottom: 380px;
+
+    @include media("<tablet") {
+      padding-top: 132px;
+      padding-bottom: 350px;
+    }
+  }
+
+  .section-heading {
+    padding: 0;
+
+    .h2 {
+      margin: 0;
+    }
+  }
+
+  .img-01 {
+    max-width: 250px;
+    top: 26px;
+    right: 18.8%;
+    left: auto;
+
+    @include media("<desktop") {
+      max-width: 200px;
+    }
+
+    @include media("<tablet") {
+      max-width: 139px;
+      top: auto;
+      bottom: 63px;
+      right: 0;
+    }
+  }
+
+  .img-02 {
+    max-width: 206px;
+    top: auto;
+    bottom: 152px;
+    right: 2.8%;
+
+    @include media("<desktop") {
+      max-width: 150px;
+    }
+
+    @include media("<tablet") {
+      max-width: 119px;
+      top: 3px;
+      right: 17%;
+      bottom: auto;
+    }
+  }
+
+  .img-03 {
+    max-width: 460px;
+    bottom: 55px;
+    left: 26.5%;
+
+    @include media("<desktop") {
+      max-width: 300px;
+    }
+
+    @include media("<tablet") {
+      max-width: 193px;
+      bottom: 173px;
+      left: 0;
+    }
+  }
+}
+
+.intro-office {
+  margin-bottom: 137px;
+
+  @include media("<tablet") {
+    margin-bottom: 100px;
+  }
+
+  .heading {
+    padding-bottom: 43px;
+
+    @include media("<tablet") {
+      padding-bottom: 50px;
+    }
+
+    .text-title--thin {
+      padding-right: 15px;
+    }
+  }
+
+  .border-l {
+    padding-top: 38px;
+
+    @include media(">=tablet") {
+      border-left: 1px solid rgba(0, 0, 0, 0.2);
+      padding-left: 20px;
+      padding-top: 0;
+    }
+
+    @include media(">=desktop") {
+      padding-left: 40px;
+    }
+  }
+}
+
+.partner-list {
+  @extend %listreset;
+  font-size: 15px;
+  line-height: 1.4;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -35px;
+  padding-top: 7px;
+
+  @include media("<desktop") {
+    margin: 0 -10px;
+  }
+
+  &.cols-2 {
+    li {
+      width: 50%;
+    }
+  }
+
+  li {
+    margin-top: 13px;
+    padding: 0 35px;
+
+    @include media("<desktop") {
+      padding: 0 10px;
+    }
+
+    > strong,
+    > span {
+      display: block;
+    }
+
+    > strong {
+      font-weight: 400;
+    }
+
+    > span {
+      font-weight: 200;
+    }
+  }
+}
+
+.location-card {
+  margin-bottom: 70px;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.05em;
+  padding: 0 17px;
+
+  @include media("<desktop") {
+    padding: 0 17px 0 0;
+  }
+
+  @include media("<tablet") {
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border-right: none;
+    padding: 31px 0 0;
+    line-height: 1.4;
+    margin-bottom: 30px;
+  }
+
+  .title-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    align-self: stretch;
+    margin-bottom: 65px;
+
+    @include media("<tablet") {
+      margin-bottom: 52px;
+    }
+  }
+
+  h3 {
+    font-size: 25px;
+    line-height: 1.3;
+    letter-spacing: -0.05em;
+    margin: 0;
+    font-weight: 200;
+
+    @include media("<tablet") {
+      font-size: 20px;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+    }
+  }
+
+  .contact-info {
+    font-size: 10px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    padding-top: 34px;
+
+    @include media("<tablet") {
+      padding-top: 28px;
+    }
+
+    > strong,
+    > span {
+      display: block;
+      margin-bottom: 4px;
+
+      @include media("<tablet") {
+        margin-bottom: 0;
+      }
+    }
+
+    > strong {
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+  }
+}
+
+.enterprises {
+  @include media("<tablet") {
+    padding-bottom: 100px;
+  }
+
+  .inner-wrap {
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    padding-top: 39px;
+
+    @include media("<tablet") {
+      border-top: none;
+      padding-top: 20px;
+    }
+  }
+}

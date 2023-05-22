@@ -1,0 +1,58 @@
+// ---------------------------------------------------------===
+// Team Detail styles
+// ---------------------------------------------------------===
+
+.lighthouse-accordion {
+  margin-bottom: 176px;
+
+  @include media('<tablet') {
+    padding-top: 50px;
+    margin-bottom: 140px;
+  }
+
+  .slide {
+    padding: 15px 0 3px;
+  }
+
+  .txt-wrap {
+    max-width: 940px;
+    font-size: 25px;
+    line-height: 1.3;
+    letter-spacing: -0.05em;
+
+    @include media('<widescreen') {
+      font-size: 16px;
+      line-height: 1.4;
+      max-width: 710px;
+    }
+  }
+}
+
+.section-specialists {
+  padding: 0;
+
+  @include media('<widescreen') {
+    padding-bottom: 40px;
+  }
+
+  @include media('<desktop') {
+    padding-bottom: 60px;
+  }
+
+  .text-primary-link--med {
+    margin-bottom: 30px;
+  }
+  
+  .heading {
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 21px 0 30px;
+
+    @include media('<tablet') {
+      padding-bottom: 55px;
+    }
+
+    h2 {
+      max-width: 991px;
+    }
+  }
+}

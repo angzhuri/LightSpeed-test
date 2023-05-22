@@ -1,0 +1,67 @@
+// ---------------------------------------------------------===
+// NewsCard styles
+// ---------------------------------------------------------===
+
+.newscard {
+  background-color: $dusk;
+  display: block;
+  position: relative;
+
+  &:after {
+    content: '\e901';
+    font: 12px/1 icomoon;
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    opacity: 0;
+    transform: translate(-5px, 5px);
+    @include animate(transform opacity);
+  }
+
+  &:hover {
+    &:after {
+      opacity: 1;
+      transform: translate(0);
+    }
+  }
+
+  &-body {
+    padding: 30px 20px 60px;
+
+    @include media('<desktop') {
+      padding-bottom: 45px;
+    }
+  }
+
+  &-foot {
+    background-color: rgba(#090909, .05);
+    padding: 25px 20px 27px;
+    display: flex;
+    gap: 10px 18px;
+    flex-wrap: wrap;
+  }
+
+  .text-primary-link--med {
+    margin-bottom: 17px;
+
+    @include media('<tablet') {
+      font-size: 10px;
+    }
+  }
+
+  .text-title--thin {
+    margin-bottom: 22px;
+  }
+
+  &--glow {
+    background-color: $glow;
+  }
+
+  &--ray {
+    background-color: $ray;
+  }
+
+  &--rise {
+    background-color: $rise;
+  }
+}

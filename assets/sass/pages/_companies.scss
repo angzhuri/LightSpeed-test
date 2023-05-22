@@ -1,0 +1,329 @@
+// ---------------------------------------------------------===
+// Companies styles
+// ---------------------------------------------------------===
+
+.section-spotlight {
+  padding-bottom: 52px;
+
+  @include media(">=tablet") {
+    padding-bottom: 73px;
+  }
+
+  .img-hold {
+    position: relative;
+    height: 100%;
+    margin-right: 20px;
+
+    @include media(">=widescreen") {
+      margin-right: 50px;
+    }
+
+    @include media("<tablet") {
+      display: none;
+    }
+
+    img {
+      width: 100%;
+      opacity: 1;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      object-fit: cover;
+      @include animate(opacity);
+
+      &.fade {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.spotlight-list {
+  @extend %listreset;
+
+  > li {
+    border: solid $black;
+    border-width: 1px 0;
+    margin-bottom: -1px;
+    padding: 18px 0;
+
+    @include media("<tablet") {
+      padding: 10px 0;
+    }
+  }
+
+  .text-details--med,
+  .text-body {
+    display: block;
+  }
+
+  .text-details--med {
+    margin-bottom: 6px;
+
+    @include media("<tablet") {
+      margin-bottom: 9px;
+    }
+  }
+
+  a {
+    display: block;
+    position: relative;
+    padding-right: 70px;
+
+    @include media("<tablet") {
+      padding: 6px 0 5px 163px;
+      min-height: 152px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &,
+    &:after {
+      @include animate(opacity);
+    }
+
+    &.active:after {
+      font: 35px/1 icomoon;
+      right: 6px;
+      @include box-align(vc);
+
+      @include media(">=tablet") {
+        content: "\e902";
+      }
+
+      @include media(">=desktop") {
+        font-size: 61px;
+      }
+    }
+
+    &:not(.active) {
+      opacity: 0.3;
+
+      &:after {
+        opacity: 0;
+      }
+    }
+  }
+
+  h3 {
+    @include media("<tablet") {
+      flex: 1;
+    }
+  }
+
+  img {
+    @include media(">=tablet") {
+      display: none;
+    }
+
+    @include media("<tablet") {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 129px;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.section-portfolio {
+  padding: 90px 0 100px;
+
+  @include media("<tablet") {
+    padding: 52px 0;
+  }
+
+  .heading {
+    margin-bottom: 30px;
+  }
+
+  h2 {
+    margin-bottom: 20px;
+
+    @include media("<tablet") {
+      margin-bottom: 14px;
+    }
+  }
+}
+
+.accordion {
+  @extend %listreset;
+
+  &:hover {
+    [data-more] {
+      opacity: 0.3;
+    }
+
+    > li:hover [data-more] {
+      opacity: 1;
+    }
+  }
+
+  [data-more] {
+    display: block;
+    padding: 25px 40px 10px 0;
+    position: relative;
+    margin-bottom: 0;
+    @include animate(opacity);
+    border-bottom: 1px solid rgba($black, 0.2);
+
+    @include media("<desktop") {
+      padding-top: 12px;
+      padding-bottom: 1px;
+    }
+
+    sup {
+      @include fs(10px, 1.2, 0.05em);
+      font-weight: 500;
+      vertical-align: top;
+      top: 1px;
+    }
+
+    &:after {
+      content: "\e905";
+      font: 42px/1 icomoon;
+      position: absolute;
+      right: 0;
+      top: 31px;
+      @include animate(transform);
+
+      @include media("<widescreen") {
+        font-size: 30px;
+      }
+
+      @include media("<desktop") {
+        font-size: 26px;
+        top: 16px;
+      }
+    }
+
+    &.active:after {
+      transform: rotate(-180deg);
+    }
+  }
+
+  .slide {
+    padding: 40px 0 85px;
+
+    @include media("<desktop") {
+      padding: 33px 0 156px;
+    }
+  }
+}
+
+.section-updates {
+  padding: 92px 0 210px;
+  position: relative;
+
+  @include media("<tablet") {
+    padding: 52px 0 100px;
+  }
+}
+
+.swiper-twitter {
+  max-width: 710px;
+
+  &.swiper {
+    padding: 65px 0;
+    overflow: visible;
+
+    @include media("<tablet") {
+      margin-right: 25px;
+      padding: 12px 0;
+    }
+  }
+
+  .swiper-slide {
+    @include media(">=tablet") {
+      &:nth-child(3n + 2) {
+        .twitter-box {
+          margin-left: auto;
+        }
+      }
+
+      &:nth-child(odd) {
+        .twitter-box {
+          margin-top: 100px;
+        }
+      }
+
+      &:not(.swiper-slide-active) {
+        filter: blur(4px);
+      }
+    }
+  }
+
+  .twitter-box {
+    > img {
+      @include media("<tablet") {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.section-newsfeed {
+  padding-bottom: 52px;
+
+  @include media("<tablet") {
+    padding-bottom: 40px;
+  }
+
+  .heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 52px;
+
+    @include media("<desktop") {
+      margin-bottom: 35px;
+    }
+
+    h2 {
+      margin-bottom: 0;
+      max-width: 600px;
+
+      @include media("<desktop") {
+        max-width: 500px;
+        font-size: 20px;
+        letter-spacing: -0.03em;
+      }
+    }
+
+    .link {
+      @include media("<tablet") {
+        display: none;
+      }
+    }
+  }
+
+  .btn-wrap {
+    @include media(">=tablet") {
+      display: none;
+    }
+  }
+}
+
+.swiper-news {
+  &.swiper {
+    overflow: visible;
+
+    @include media("<tablet") {
+      margin-bottom: 28px;
+    }
+  }
+
+  &.slider-init {
+    margin-right: 33px;
+
+    @include media(">=desktop") {
+      margin: 0 60px 0 -60px;
+    }
+
+    @include media(">=widescreen") {
+      margin: 0 400px 0 -400px;
+    }
+  }
+}

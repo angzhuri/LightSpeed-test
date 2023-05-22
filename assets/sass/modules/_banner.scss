@@ -1,0 +1,222 @@
+// ---------------------------------------------------------===
+// Banner styles
+// ---------------------------------------------------------===
+
+.banner {
+  white-space: nowrap;
+  text-transform: uppercase;
+  padding-top: 10px;
+  position: relative;
+  z-index: 2;
+
+  @include media("<tablet") {
+    white-space: normal;
+    text-align: center;
+    padding-top: 0;
+  }
+
+  &.style--01 {
+    padding: 0;
+    margin-bottom: 82px;
+
+    .container {
+      padding-top: 238px;
+      padding-bottom: 380px;
+    }
+
+    .section-heading {
+      padding: 0;
+
+      .h2 {
+        margin: 0;
+      }
+    }
+
+    .img-01 {
+      max-width: 250px;
+      top: 97px;
+      right: 18.8%;
+      left: auto;
+    }
+
+    .img-02 {
+      max-width: 206px;
+      top: auto;
+      bottom: 152px;
+      right: 2.8%;
+    }
+
+    .img-03 {
+      bottom: 55px;
+      left: 26.5%;
+    }
+  }
+
+  h1:not(.h2) {
+    font-size: 180px;
+    line-height: 1;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+
+    @include media("<desktop") {
+      font-size: 150px;
+    }
+
+    @include media("<tablet") {
+      font-size: 45px;
+      line-height: 1.1;
+      letter-spacing: 0.03em;
+    }
+  }
+
+  .container {
+    position: relative;
+    padding-top: 274px;
+    padding-bottom: 189px;
+
+    @include media("<desktop") {
+      padding-top: 230px;
+      padding-bottom: 200px;
+    }
+
+    @include media("<tablet") {
+      padding-top: 294px;
+      padding-bottom: 334px;
+    }
+  }
+
+  .text {
+    padding: 0 105px;
+    z-index: -1;
+    position: relative;
+
+    @include media("<tablet") {
+      padding: 0 10px;
+    }
+  }
+
+  [class^="img-"] {
+    position: absolute;
+  }
+
+  .img-01 {
+    top: 16px;
+    left: 34.7%;
+    max-width: 250px;
+
+    @include media("<desktop") {
+      max-width: 200px;
+      left: 20%;
+    }
+
+    @include media("<tablet") {
+      max-width: 163px;
+      top: 0;
+      left: 17%;
+    }
+  }
+
+  .img-02 {
+    top: 48px;
+    max-width: 250px;
+    right: 9%;
+    z-index: -1;
+
+    @include media("<desktop") {
+      max-width: 200px;
+    }
+
+    @include media("<tablet") {
+      max-width: 106px;
+      right: 0;
+      top: 45%;
+    }
+  }
+
+  .img-03 {
+    bottom: 73px;
+    max-width: 460px;
+    left: 2.5%;
+    z-index: -1;
+
+    @include media("<desktop") {
+      max-width: 400px;
+      bottom: 15px;
+    }
+
+    @include media("<tablet") {
+      max-width: 193px;
+      bottom: 149px;
+      left: 0;
+    }
+  }
+
+  .img-04 {
+    bottom: 0;
+    max-width: 209px;
+    z-index: -1;
+    right: 26.8%;
+
+    @include media("<desktop") {
+      max-width: 180px;
+      right: 10%;
+    }
+
+    @include media("<tablet") {
+      max-width: 119px;
+      bottom: 0;
+      right: 20px;
+    }
+  }
+
+  .blur-5 {
+    @include media("<tablet") {
+      filter: blur(0);
+    }
+  }
+}
+
+.blur-5 {
+  filter: blur(5px);
+}
+
+.red-gradient,
+.yellow-gradient,
+.white-gradient {
+  position: relative;
+
+  &:before {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    top: 0;
+    content: "";
+  }
+}
+
+.red-gradient {
+  &:before {
+    background: linear-gradient(0deg, #ff6838 0%, rgba(255, 104, 56, 0) 26.98%);
+  }
+}
+
+.yellow-gradient {
+  &:before {
+    background: linear-gradient(
+      0deg,
+      #fff696 0%,
+      rgba(255, 246, 150, 0) 28.84%
+    );
+  }
+}
+
+.white-gradient {
+  &:before {
+    background: linear-gradient(
+      0deg,
+      #b6e5ff 0%,
+      rgba(182, 229, 255, 0) 33.95%
+    );
+  }
+}

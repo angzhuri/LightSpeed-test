@@ -1,0 +1,90 @@
+// ---------------------------------------------------------===
+// TeamCard styles
+// ---------------------------------------------------------===
+
+.teamcard {
+  margin-bottom: 50px;
+  display: block;
+  position: relative;
+
+  &:hover {
+    .teamcard-img::after {
+      opacity: 1;
+    }
+  }
+
+  &.g-blue {
+    .teamcard-img:after {
+      background: linear-gradient(
+        180deg,
+        rgba(182, 229, 255, 0) 0%,
+        #b6e5ff 100%
+      );
+      transform: none;
+    }
+  }
+
+  .tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+
+  .teamcard-img {
+    position: relative;
+    margin-bottom: 12px;
+
+    @include media("<tablet") {
+      margin-bottom: 16px;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      opacity: 0;
+      background: linear-gradient(
+        180deg,
+        #ff6838 0%,
+        rgba(255, 104, 56, 0) 100%
+      );
+      transform: matrix(1, 0, 0, -1, 0, 0);
+      @include animate(opacity);
+    }
+
+    @include media("<tablet") {
+      padding-top: 100%;
+    }
+
+    img {
+      width: 100%;
+
+      @include media("<tablet") {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .txt-wrap {
+    max-width: 260px;
+  }
+
+  .text-primary-link--med,
+  .text-primary-link--bold {
+    margin-bottom: 12px;
+  }
+
+  .text-body-lg--thin {
+    @include media("<tablet") {
+      font-size: 16px;
+    }
+  }
+}

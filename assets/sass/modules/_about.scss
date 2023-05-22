@@ -1,0 +1,65 @@
+// ---------------------------------------------------------===
+// About styles
+// ---------------------------------------------------------===
+
+.about-section {
+	position: relative;
+	font-size: 20px;
+	line-height: 1.4;
+	letter-spacing: -0.05em;
+	z-index: 1;
+	padding: 220px 0 196px;
+
+	@include media('<tablet') {
+		font-size: 16px;
+		line-height: 1.375;
+		letter-spacing: -0.03em;
+		padding: 101px 0;
+	}
+
+	&:before {
+		position: absolute;
+		top: -400px;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		content: "";
+		background: linear-gradient(180deg, rgba(182, 229, 255, 0) 0%, #b6e5ff 41.15%, #b6e5ff 72.92%, rgba(182, 229, 255, 0) 100%);
+		z-index: -1;
+	}
+
+	.img-hold {
+		padding-top: 6px;
+		height: 100%;
+
+		@include media('<tablet') {
+			display: none;
+		}
+
+		img {
+			width: 100%;
+		}
+	}
+
+	.intro-text {
+		font-size: 40px;
+		line-height: 1.2;
+		letter-spacing: -0.05em;
+		margin-bottom: 73px;
+
+		@include media('<tablet') {
+			font-size: 22px;
+			line-height: 1.3182;
+			letter-spacing: -0.03em;
+			margin-bottom: 39px;
+		}
+	}
+
+	p {
+		margin-bottom: 28px;
+
+		@include media('<tablet') {
+			margin-bottom: 22px;
+		}
+	}
+}

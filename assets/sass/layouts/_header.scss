@@ -1,0 +1,360 @@
+// ---------------------------------------------------------===
+// Header styles
+// ---------------------------------------------------------===
+
+#header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding: 15px 0;
+  z-index: 99;
+
+  @include media("<tablet") {
+    padding: 14px 0;
+  }
+
+  &:before {
+    background: rgba(255, 255, 255, 0.05);
+    mix-blend-mode: normal;
+    backdrop-filter: blur(27.5px);
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: -1;
+    content: "";
+  }
+
+  .container {
+    // max-width: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    max-width: 320px;
+    position: relative;
+
+    @include media("screen", ">=desktop") {
+      z-index: 2;
+    }
+
+    @include media("<tablet") {
+      max-width: 200px;
+    }
+
+    a {
+      @include animate(filter);
+      display: block;
+      font-size: 0;
+
+      &:hover {
+        filter: blur(5px);
+      }
+    }
+  }
+}
+
+.nav-opener {
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: $black;
+  display: block;
+  position: relative;
+  padding: 10px 15px 10px;
+  border: none;
+  background: none;
+
+  @include media("<tablet") {
+    padding: 8px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .menu-text {
+    margin-right: 8px;
+
+    @include media("<tablet") {
+      display: none;
+    }
+  }
+
+  .icon {
+    border-width: 2px 0;
+    border-color: #000;
+    border-style: solid;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    width: 15px;
+    height: 8px;
+    @include animate(height);
+    margin-top: -1px;
+
+    @include media("<tablet") {
+      width: 23px;
+      height: 12px;
+      border-width: 3px 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 0;
+    }
+  }
+
+  &:hover {
+    .icon {
+      height: 12px;
+
+      @include media("<tablet") {
+        height: 14px;
+      }
+    }
+  }
+}
+
+.nav-slide {
+  position: absolute;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  padding-top: 100px;
+  display: flex;
+  background: $dusk;
+  width: 713px;
+  padding: 70px 0 0 63px;
+  transform: translateX(100%);
+  @include animate(transform);
+  transition: transform 0.8s cubic-bezier(1, 0, 0.68, 1);
+
+  @include media("<tablet") {
+    width: 100%;
+    padding-left: 27px;
+  }
+
+  .nav-active & {
+    transform: translateX(0);
+
+    &:before {
+      width: 100vw;
+    }
+  }
+
+  &:before {
+    position: absolute;
+    right: 100%;
+    top: 0;
+    bottom: 0;
+    content: "";
+    width: 0;
+    mix-blend-mode: normal;
+    backdrop-filter: blur(3px);
+    background: rgba(255, 255, 255, 0.05);
+    z-index: -1;
+    transition: width 0.8s cubic-bezier(1, 0, 0.68, 1);
+  }
+
+  .text-menu {
+    position: absolute;
+    left: 96px;
+    top: 27px;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: $black;
+
+    @include media("<tablet") {
+      left: 27px;
+    }
+  }
+
+  .close {
+    right: 30px;
+    top: 18px;
+    position: absolute;
+    padding: 10px;
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  .inner {
+    height: calc(100vh - 70px);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    width: 100%;
+    padding-bottom: 40px;
+
+    @include media("<tablet") {
+      padding: 0 27px 35px 0;
+    }
+
+    @include media("<phone") {
+      padding-bottom: 20px;
+    }
+  }
+}
+
+.main-nav {
+  @extend %listreset;
+  font-size: 60px;
+  font-weight: 300;
+  line-height: 1;
+  color: $black;
+  text-transform: capitalize;
+  counter-reset: counter;
+  letter-spacing: -0.05em;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 64px;
+
+  @include media("<widescreen") {
+    font-size: 50px;
+  }
+
+  @include media("<tablet") {
+    font-size: 40px;
+    padding: 42px 0 10px;
+  }
+
+  @include media("<phone") {
+    font-size: 30px;
+  }
+
+  li {
+    padding: 7px 0 8px 0;
+    overflow: hidden;
+
+    @include media("<tablet") {
+      padding: 10px 0;
+    }
+  }
+
+  a {
+    position: relative;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    counter-increment: counter;
+    padding-left: 30px;
+    transform: translateY(120%);
+    transition: transform 0.4s cubic-bezier(1, 0, 0.68, 1);
+
+    @include media("<tablet") {
+      padding-left: 24px;
+    }
+
+    &:not(.active) {
+      opacity: 0.3;
+
+      &:after {
+        opacity: 0;
+      }
+    }
+
+    .nav-active & {
+      transition: transform 1s cubic-bezier(1, 0, 0.68, 1);
+      transform: translateY(0);
+    }
+
+    &:before {
+      content: "0" counter(counter);
+      position: absolute;
+      left: 0;
+      top: 4px;
+      letter-spacing: 0.05em;
+      font-size: 10px;
+      font-weight: 700;
+      color: $black;
+
+      @include media("<desktop") {
+        top: 6px;
+      }
+    }
+
+    &:after {
+      content: "\e908";
+      font-family: "icomoon";
+      font-weight: 700;
+      font-size: 40px;
+      padding: 9px 0 0 21px;
+      opacity: 1;
+      @include animate(opacity);
+
+      @include media("<tablet") {
+        font-size: 30px;
+        padding-left: 10px;
+      }
+    }
+  }
+}
+
+.sub-nav {
+  overflow: hidden;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: capitalize;
+  letter-spacing: -0.05em;
+  overflow: hidden;
+  flex-grow: 0;
+  flex-shrink: 0;
+
+  @include media("<tablet") {
+    font-size: 16px;
+    font-weight: 200;
+    letter-spacing: -0.03em;
+    border-top: 1px solid rgba(color(black), 0.2);
+    padding-top: 29px;
+  }
+
+  ul {
+    @extend %listreset;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 30px;
+    margin-right: -25px;
+    transform: translateY(120%);
+    transition: transform 0.4s cubic-bezier(1, 0, 0.68, 1);
+
+    @include media("<tablet") {
+      padding: 0;
+    }
+
+    .nav-active & {
+      transition: transform 1s cubic-bezier(1, 0, 0.68, 1);
+      transform: translateY(0);
+    }
+  }
+
+  a {
+    color: $black;
+    text-decoration: none;
+
+    &:not(.active) {
+      opacity: 0.3;
+    }
+  }
+
+  li {
+    padding: 0 25px 5px 0;
+
+    @include media("<tablet") {
+      padding: 0 31px 8px 0;
+    }
+  }
+}
+
+.opacity-30 {
+  opacity: 0.3;
+  @include animate(opacity);
+}

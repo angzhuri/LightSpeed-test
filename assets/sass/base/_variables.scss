@@ -1,0 +1,99 @@
+// ---------------------------------------------------------===
+// Variables
+// ---------------------------------------------------------===
+
+// Colors
+$colors: (
+    blue: (
+        1: #619ecb,
+        2: #517ea1,
+    ),
+    black: (
+        1: #000,
+        2: #1f1f24,
+        '1a2': rgba(#000,.02),
+    ),
+    white: (
+        1: #fff,
+        2: #fcfcfc,
+        3: #f6f6f6,
+        4: #fbfcff,
+    )
+);
+
+$white: #fff;
+$black: #000;
+$dawn: #ff6838;
+$dusk: #ffd7cf;
+$rise: #ffd15b;
+$ray: #fff696;
+$moss: #8e9e7c;
+$glow: #d3ffa6;
+$night: #8a9ead;
+$sky: #b6e5ff;
+$practical-black: #1e0a1e;
+$seashell-peach: #fff7f0;
+
+
+
+$dir: '../..';
+$font-path: '#{$dir}/fonts';
+$image-path: '#{$dir}/images';
+
+$good-sans: 'GTFGoodSans', 'Helvetica Neue', 'Arial', 'Helvetica', sans-serif;
+$base-font-sans-serif: $good-sans;
+$base-font-serif: 'Times New Roman', 'Times', 'Baskerville', 'Georgia', serif;
+
+// Body
+$base-background-color: $seashell-peach !default;
+$base-text-color: $black !default;
+$font-size-base: 18px !default;
+$line-height-base: 1.6 !default;
+$base-font-family: $base-font-sans-serif !default;
+$font-weight-200: 200;
+
+$vertical-rhythm: ($line-height-base * 1em);
+
+$base-min-width: 320px;
+
+// Liks
+$base-link-color: $practical-black;
+
+// Buttons 
+$btn-color: color(white) !default;
+$btn-background: color(black) !default;
+$btn-padding: 0.4em 0.7em !default;
+$btn-font-size: inherit !default;
+
+// Forms
+$form-element-padding: $btn-padding !default;
+$form-element-border-color: color(black,2) !default;
+$form-element-focus-border-color: color(black) !default;
+$form-border-radius: 5px !default;
+$placeholder-color: color(black,2) !default;
+
+// Headers
+$h1-font-size: 70px !default;
+$h2-font-size: 60px !default;
+$h3-font-size: 40px !default;
+$h4-font-size: 30px !default;
+$h5-font-size: 25px !default;
+$h6-font-size: 18px !default;
+
+$headings-font-family: inherit !default;
+$headings-color: inherit !default;
+
+
+$animation-speed: 0.3s;
+
+// nice select
+$niceSelect: false;
+$niceCheckRadio: true;
+
+// grid 
+$usegrid: true;
+$grid-count: 12;
+$grid-gutter: 20px;
+$container-width: 1420px;
+// $grid-gutter-mobile: 20px;  // Define if the mobile gutter is different
+// $container-gutter: 40px; // Define if the container gutter is different than grid gutter
